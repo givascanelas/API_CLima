@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta do Clima</title>
+    <link rel="stylesheet" href="main.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Shrikhand&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div id="quadrado">
+        <div id="texto">            
+            <div class="local">
+                <img src="./assets/Local.png" alt="Localização"  width="75px">
+              </div>
+
+              <div class="search-box">
+                <input class="search-txt" type="text" name="" placeholder="ESCOLHA SUA LOCALIZAÇÂO">
+                <a class="search-btn" href="#">
+                    <i class="fas fa-search"></i>
+                </a>
+              </div>
+
+            <form id="formClima">
+                <label for="cityInput">ESCOLHA UMA LOCALIZAÇÃO: </label>
+                <input type="text" id="cityInput" name="cityInput">
+                <button type="submit">Consultar </button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
