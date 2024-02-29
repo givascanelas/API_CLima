@@ -22,12 +22,26 @@
     display: flex;
     margin-bottom: 36%;
     margin-right: 45%;
+    position: absolute;
+    align-items: center;
 }
 
 #formClima{
     font-family: "Inter", sans-serif;
     font-weight: bold;
     font-size: x-large;
+    width: 100%;
+}
+
+#mundo{
+    width: 55;
+    height: 35vh;
+}
+
+/* body{
+    margin: 0;
+    padding: 0;
+    background: white;
 }
 
 .search-box{
@@ -35,21 +49,43 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    background: #000;
-    height: 40px;
+    background: #073C50;
+    height: 40%;
     border-radius: 40px;
     padding: 10px;
 }
 
-.search-txt{
-
-border: none;
-background: none;
-outline: none;
-float: left;
-padding: 0;
-color: #fff;
-font-size: 15px;
-transition: 0.5s;
-line-height: 40px;
+.search-box:hover > .search-txt{
+    width: 240px;
+    padding: 0 5px;
 }
+
+.search-box:hover > .search-btn{
+    background: none;
+}
+
+.search-btn{
+    color: white;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.search-txt{
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: white;
+    font-size: 15px;
+    transition: 0.3s;
+    line-height: 40px;
+    width: 0px;
+} */
