@@ -1,37 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consulta do Clima</title>
     <link rel="stylesheet" href="main.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Shrikhand&display=swap" rel="stylesheet">
-
 </head>
+
 <body>
     <div id="quadrado">
+        <div class="search-box">
+            <input class="search-txt" type="text" name="" placeholder="ESCREVA UMA CIDADE AQUI">
+            <a class="search-btn" href="#">
+                <img src="./assets/Botão Pesquisa.png" alt="Botão" width="55px" id="searchicon">
+            </a>
+        </div>
+
         <div id="texto">
-            <!-- <div class="search-box">
-                <input class="search-txt" type="text" name="" placeholder="ESCOLHA SUA LOCALIZAÇÃO">
-                <a class="search-btn" href="#">
-                    <i class="fas fa-search"></i>
-                </a>
-              </div> -->
+            <img src="./assets/Local.png" alt="Localização"  width="75px">
 
-            <div class="local">
-                <img src="./assets/Local.png" alt="Localização"  width="75px">
-              </div>
+            <h1>ESCOLHA UMA LOCALIZAÇÃO:</h1>
 
-            <form id="formClima">
-                <label for="cityInput">ESCOLHA UMA LOCALIZAÇÃO: </label>
-                <input type="text" id="cityInput" name="cityInput">
-                <button type="submit">Consultar </button>
-            </form>
         </div>
         <img src="./assets/Mundo.png" alt="" id="mundo">
     </div>
 </body>
+
+    <script>
+        const search = document.getElementById("searchicon")
+        search.addEventListener('click', async () => {
+            document.getElementById('formClima').addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                const city = document.getElementById('cityInput').value;
+
+                fetch(`http://localhost:3000/climatempo/${city}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        const tempoResult = document.getElementById('climaResult')
+
+                        if (data.Temperatura) {
+                            tempoResult.innerHTML = `Temperatura: ${data.Temperatura}ºC <br>
+                        Umidade: ${data.Umidade}% <br>
+                        Velocidade do Vento: ${data.VelocidadeDoVento} m/s <br>
+                        Descrição do Clima: ${data.Clima}`;
+                        } else (
+                            tempoResult.innerHTML = "Erro ao obter dados meteorológicos."
+                        )
+                    })
+                    .catch(error => console.error("Erro ao obter dados"));
+            })
+        })
+    </script>
+    
 </html>

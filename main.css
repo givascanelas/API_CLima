@@ -18,15 +18,15 @@
     align-items: center;
 }
 
-#texto{
-    display: flex;
-    margin-bottom: 36%;
-    margin-right: 45%;
-    position: absolute;
-    align-items: center;
-}
+    #texto{
+        display: flex;
+        margin-bottom: 36%;
+        margin-right: 45%;
+        position: absolute;
+        align-items: center;
+    }
 
-#formClima{
+h1{
     font-family: "Inter", sans-serif;
     font-weight: bold;
     font-size: x-large;
@@ -35,13 +35,12 @@
 
 #mundo{
     width: 55;
-    height: 35vh;
+    height: 55vh;
 }
 
-/* body{
+body{
     margin: 0;
     padding: 0;
-    background: white;
 }
 
 .search-box{
@@ -78,6 +77,7 @@
 }
 
 .search-txt{
+    font-family: "Inter", sans-serif;
     border: none;
     background: none;
     outline: none;
@@ -88,4 +88,12 @@
     transition: 0.3s;
     line-height: 40px;
     width: 0px;
-} */
+}
+
+#quadrado .search-box{
+    height: 40px;
+    font-family: "Inter", sans-serif;
+    font-weight: bold;
+    font-size: x-large;
+}
+
